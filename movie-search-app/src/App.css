@@ -1,4 +1,26 @@
 /* Estilos generales */
+/* ===== Scrollbar CSS ===== */
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #5856bd #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5856bd;
+    border-radius: 50px;
+    border: 3px double #dedede;
+  }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,16 +28,15 @@ body {
   background-image: url(../public/img/fondo.jpg) ;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .container {
-  max-width: 800px;
-  
-  margin: 00 auto;
+  max-width: 800px;  
+  margin: 0 auto;
   padding: 20px;
   /* z-index: 1;
   position: relative; */
@@ -25,6 +46,7 @@ h1 {
   font-size: 50px;
   margin-bottom: 20px;
   text-align: center; 
+  color: #ccc;
 }
 
 form {
@@ -66,20 +88,25 @@ button:hover {
 
 .movie-card {
   background-color: #fff;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 300px;
 }
 
 .movie-card img {
   width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  height: 300px;
+  border-radius: 4px;
+  /* margin-bottom: 10px; */
 }
 
 .movie-card h2 {
   font-size: 18px;
   margin-bottom: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .movie-card p {
