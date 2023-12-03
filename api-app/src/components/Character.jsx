@@ -11,26 +11,30 @@ const Character = () => {
     useEffect(() => {
       const getCharacter = async () => {
         const res = await fetch(
-          "https://apisimpsons.fly.dev/api/personajes/find/" + idCharacter
+          `https://apisimpsons.fly.dev/api/personajes/find/${idCharacter}`
         );
         const data = await res.json();
         setCharacter(data);
+        console.log("Character data:", data); 
       };
       getCharacter();
     }, [idCharacter]);
   
     const indice = parseInt(idCharacter);
+    
 
   return (
     <>
       <button onClick={() => navigate(-1)}>VOLVER</button>
       <div>
-        <h1>{character.id}</h1>
+        <h1>{character._id}</h1>
         <h3>{character.Nombre}</h3>
         <img src={character.Imagen} alt={character.Nombre} />
         <h3>{character.Estado}</h3>
         <h3>{character.Genero}</h3>
         <h3>{character.Ocupacion}</h3>
+        <p>{character.Historia}</p>
+        
       </div>
       <button onClick={() => navigate("/characters/" + (indice - 1))}>
         Anterior

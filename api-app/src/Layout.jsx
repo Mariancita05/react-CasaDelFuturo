@@ -7,11 +7,11 @@ const Layout = () => {
       <header>
         <nav>
             <Link to='/'>HOME</Link>
-            <Link to='/SearchCharacter'>BUSCAR</Link>
+            <Link to='/randomCharacter'>PERSONAJES</Link>
+            <Link to='/search'>BUSCAR</Link>
         </nav>
       </header>
       <main>
-        <h1>ENRUTAMIENTO</h1>
         <Outlet/>
       </main>
     </>

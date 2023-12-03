@@ -1,16 +1,30 @@
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Link } from "react-router-dom";
 
-import { useEffect, useState } from 'react';
-import './App.css';
 import { CardCharacter } from "../components/CardCharacter";
 
 function App() {
+  return (
+    <>
+      <main>
+      <h1>LOS SIMPSON</h1>
+        <Link
+          style={{ textDecoration: "none", color: "#fff" }}
+          to="/randomCharacter"
+        >
+          <button>Personajes</button>
+        </Link>
+      </main>
+    </>
+  );
 
-  const [character, setCharacter] = useState([])
-  const [count, setCount ]= useState(0)
+  /* const [character, setCharacter] = useState([])
+  const [count, setCount ]= useState(1)
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12page=${count}`)
+      const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=12&page=${count}`)
       const data = await res.json()
 
       setCharacter(data.docs)
@@ -44,7 +58,7 @@ function App() {
       </section>
       
     </>
-  );
+  ); */
 }
 
 export default App;
